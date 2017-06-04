@@ -4,7 +4,8 @@ This visual explorer is result of an idea to determine relationships between aya
 discuss about. We used Farhang-e-Quran to extract subjects present in each ayat.
 
 ## How to use
-Just open index.html in your favourite browser.
+Just open index.html in your favourite browser:
+https://sjnaficy.github.io/quran-relations/
 
 ## How it works
 If two ayat discuss about same subjects they are considered related.

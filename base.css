@@ -1,0 +1,422 @@
+ @font-face {font-family: 'KFGQPC_Naskh';src: url('http://tanzil.net/res/font/eot/KFC_naskh.eot');src: local('KFGQPC Uthman Taha Naskh'), url('http://tanzil.net/res/font/org/KFC_naskh.otf') format('opentype');} 
+ 
+html, body {
+    margin:0;
+    padding:0;
+    font-family: "Tahoma", sans;
+    sfont-size: 0.9em;
+    stext-align: center;
+    background-color:#F2F2F2;
+}
+
+input, select {
+    font-size:0.9em;
+}
+
+h1,h2,h3,h4 {
+  font-family: "B Roya";
+  font-weight:none;
+  color:#D80808;
+}
+
+h1 {
+  font-family: "B Titr";
+  line-height: 1.4em;
+  text-shadow: 2px 2px 2px silver;
+}
+
+h4 {
+    font-size:120%;
+    text-decoration:none;
+    margin: 0.5em 0;
+}
+
+a {
+  color:#23A4FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.right {text-align: right}
+.left {text-align: left}
+.center {text-align: center}
+.floatright { float: right }
+.floatleft { float: left }
+
+button .ui-button-text { 
+  font-size:0.8em
+}
+
+#container {
+    width: 100%;
+    height: 600px;
+    margin:0 auto;
+    position:relative;
+}
+
+#left-container, 
+#right-container, 
+#center-container {
+    height:600px;
+    position:absolute;
+    top:0;
+}
+
+#left-container, #right-container {
+    color:#686c70;
+    background-color:#fff;
+    background-repeat:no-repeat;
+}
+
+#left-container {
+    left:0;
+    right:812px;
+    padding: 0 5px;
+    background-position:center right;    
+}
+
+#right-container {
+    padding: 0px 5px;
+    width:200px;
+    right:0;
+    background-position:center left;
+}
+
+#right-container h4{
+    text-indent:8px;
+}
+
+#center-container {
+    width:600px;
+    right:210px;
+    background-color:#fff;
+    border: 1px solid black;
+    color:#ccc;
+}
+
+#bottom-container {
+    position:absolute;
+    top:600px;  
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+.text {
+    margin: 7px;
+}
+
+.qtip {
+  direction: rtl;
+}
+
+.ui-tooltip-content, .qtip-content {
+  font-family: Scheherazade, 'KFGQPC_Naskh';
+  text-align: justify;
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+.ui-tooltip-content em, .qtip-content em {
+  font-style: normal;
+  color: #D80808;
+}
+
+.ayat {
+  font-family: Scheherazade, 'KFGQPC_Naskh';
+  font-size: 1.4em;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding: 0;
+}
+
+/******************************************************
+Center (graph panel)
+*******************************************************/
+
+.ayat-text {
+  font-family: Scheherazade, 'KFGQPC_Naskh';
+  font-size: 1.5em;
+}
+
+.vaqf {
+  color: #16960B
+}
+
+/******************************************************
+Center (graph panel)
+*******************************************************/
+
+#graph-buttons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1000;
+}
+
+#graph-buttons .ui-button-text {
+  padding: 5px;
+}
+
+#log {
+    position:absolute;
+    top:10px;
+    font-size:1.0em;
+    font-weight:bold;
+    color:#23A4FF;
+}
+
+
+#infovis {
+    position:relative;
+    width:600px;
+    height:600px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.node-label {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.node-label:hover {
+  background-color: #fd9;
+  z-index:1000;
+  color: black;
+}
+
+.active-highlight {
+  background-color: #fed;
+}
+
+.highlight {
+  color: !important black;
+  background-color: #fd9;
+}
+
+.node-label-1 {
+  font-size: 0.8em;
+  color: #000;
+}
+
+.node-label-2 {
+  font-size: 0.7em;
+  color: #999;
+}
+
+.node-label-3 {
+  overflow: hidden;
+  text-indent: -1000px;
+  width: 4px;
+  height: 4px;
+}
+
+/******************************************************
+Right (control panel)
+*******************************************************/
+
+.about-link {
+  cursor: pointer;
+}
+
+.about-link:hover {
+  color: #FF7F42
+}
+
+button.ui-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.slider {
+  padding: 5px 10px;
+  margin-left: 23px;
+  position: relative;
+}
+
+.slider-number {
+  position: absolute;
+  left: -25px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid silver;
+  background: white;
+  font-size: 12px;
+  text-align:center;
+}
+
+#history-tabs-container {
+  font-size: 0.8em;
+  height: 210px;
+}
+
+#historylist, #searchlist {
+  margin: 0;
+  list-style-type: none;
+  padding:3px;
+}
+
+.alternatelist li {
+  background-color: #eee
+}
+
+.alternatelist li:nth-child(odd) {
+  background-color: #fff
+}
+
+/******************************************************
+Left (info panel)
+*******************************************************/
+
+.tab-options {
+  position: absolute;
+  left: 0.8em;
+  top: 0.8em;
+  z-index: 1000;
+}
+
+#inner-details-text {
+  font-family: Scheherazade, 'KFGQPC_Naskh';
+  text-align: justify;
+  font-size: 1.8em;
+  height: 200px;
+  overflow: auto;
+  /* fix Chrome's scrollbar bug */
+  text-align: right;
+  direction: ltr;
+}
+
+#inner-details {
+    font-size:0.8em;
+    list-style:none;
+    margin:7px;
+}
+
+#ayatinfo-tabs-container {
+  font-size: 0.8em;
+  height: 350px;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  float: right;
+}
+
+.datatable {
+  width:100%;
+  border:1px solid silver
+  border-collapse: collapse;
+  background-color: #fff;
+}
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr.ayatsubject.highlight {
+  color: !important black;
+  background-color: #fd9;
+}
+tr:nth-child(even).ayatsubject.highlight {
+  background-color: #fc8;
+}
+.datatable td {
+  padding: 3px 4px
+}
+
+
+.subjects-filter-nonsimilar tr.highlight{
+  display: none;
+}
+.subjects-filter-similar tr{
+  display: none;
+}
+.subjects-filter-similar tr.highlight{
+  display: table-row;
+}
+
+
+
+/******************************************************
+Overlay (about panel)
+*******************************************************/
+
+#about-container-bg {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top:-10em;
+  bottom: -10em;
+  left: -10em;
+  right: -10em;
+  z-index: 1999;
+  background-color: rgba(128,128,128,0.5);
+}
+
+#about-container {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 2em;
+  bottom: 2em;
+  left: 5em;
+  right: 5em;
+  z-index: 2000;
+  border: 1px solid #AA7A00;
+  box-shadow: 0px 0px 20px #777;
+  background: #efefef; /* Old browsers */
+  background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 20%, #ffffff 44%, #efefef 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(20%,#ffffff), color-stop(44%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 20%,#ffffff 44%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #efefef 0%,#ffffff 20%,#ffffff 44%,#efefef 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #efefef 0%,#ffffff 20%,#ffffff 44%,#efefef 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #efefef 0%,#ffffff 20%,#ffffff 44%,#efefef 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+
+#about-container-top {
+  background: #fceabb; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fceabb), color-stop(50%,#fccd4d), color-stop(51%,#f8b500), color-stop(100%,#fbdf93)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+  color: black;
+  border-bottom: 1px solid #AA7A00;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+#about-container-content {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 0.9em;
+  line-height: 1.8em;
+  text-align: justify;
+  overflow: auto;
+}
+#about-closebtn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 16pt;
+}

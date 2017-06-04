@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>ارتباط موضوعی آیات قرآن کریم</title>
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/ui-lightness/jquery-ui.css" />
+		<link rel="stylesheet" href="jquery.qtip.custom/jquery.qtip.min.css" />
+		<link type="text/css" href="base.css" rel="stylesheet">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="jquery.qtip.custom/jquery.qtip.min.js"></script>
+
+		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+
+		<script type="text/javascript" src="jit-yc.js"></script>
+
+		<script type="text/javascript" src="aye-subjects.js"></script>
+		<script type="text/javascript" src="graph.js"></script>
+		<script type="text/javascript" src="quranmeta.js"></script>
+		<script type="text/javascript" src="quran-simple-min.js"></script>
+		<script type="text/javascript" src="explorer.js"></script>
+	</head>
+
+	<body dir='rtl' onload="init();">
+		<div id="container">
+
+			<div id="left-container">
+			  <button id="prevaya" class="floatright" title="آیه قبل">&lt;</button>
+			  <button id="nextaya" class="floatright" title="آیه بعد">&gt;</button>
+			  <a target='tanzil' id="tanzil-link" class="floatleft">لینک تنزیل</a>
+				<h4 id="inner-details-no"></h4>
+				<div id="inner-details-text">
+				</div>
+				<div id="ayatinfo-tabs-container">
+				  <div id="ayatinfo-tabs">
+				    <ul>
+				      <li><a href="#ayatinfo-similars">آیات مشابه</a></li>
+				      <li><a href="#ayatinfo-subjects">موضوعات آیه</a></li>
+				    </ul>
+				    <div id="ayatinfo-similars">
+				      <div id="inner-details-similar">
+				      </div>
+      			</div>
+				    <div id="ayatinfo-subjects">
+				      <div class="tab-options">
+    		        <span id="inner-details-subjects-summary"></span>
+      	        <select id="ayatinfo-subjects-filter">
+      	          <option value="subjects-filter-none">همه</option>
+      	          <option value="subjects-filter-similar">مشترک‌ها</option>
+      	          <option value="subjects-filter-nonsimilar">غیرمشترک‌ها</option>
+      	        </select>
+  		        </div>
+				      <div id="inner-details-subjects">
+				      در حال بارگزاری ... 
+				      </div>
+      			</div>
+    			</div>
+  			</div>
+			</div>
+
+			<div id="center-container">
+				<div id="graph-buttons">
+				  <button id="graph-zoom-in" title="Zoom In"><span class="ui-icon ui-icon-plus">+</span></button>
+				  <button id="graph-zoom-out" title="Zoom Out"><span class="ui-icon ui-icon-minus">-</span></button>
+				</div>    
+				<div id="infovis"></div>    
+			</div>
+
+			<div id="right-container">
+					<h1 class="about-link">ارتباط موضوعی آیات قرآن کریم
+					</h1> 
+					تعداد آیات مشابه همسایه
+					<div class="slider"><div class="slider-number"></div><div id="maxneighbors"></div></div>
+					<br/>
+					تعداد سطوح نمایش
+					<div class="slider"><div class="slider-number"></div><div id="maxlevels"></div></div>
+					<br/>
+					
+					<label><input type='checkbox' id="hide-same-sura"/> حذف همسایگان هم‌سوره</label><br/>
+					<label><input type='checkbox' id="hide-same-ruku"/> حذف همسایگان هم‌رکوع</label>
+					<br/><br/>
+					برو به:
+					<br/> 
+					<select id="cursura"></select><select id="curaya"></select>
+					<br/><br/>
+					
+					<div id="history-tabs-container">
+				    <div id="history-tabs">
+				      <ul>
+				        <li><a href="#history-list">تاریخچه</a></li>
+				        <li><a href="#search-results">جستجو</a></li>
+				      </ul>
+				      <div id="search-results">
+				        <input id="searchtxt" type='text' style='width:95%;border: 3px ridge;background-color:#FFF8F0'/>
+      					<ul id="searchlist" class='alternatelist'></ul>
+        			</div>
+				      <div id="history-list">
+      					<ul id="historylist" class='alternatelist'></ul>
+        			</div>
+      			</div>
+    			</div>
+    			
+					<br/>
+			</div>
+
+			<div id="log"></div>
+		</div>
+		
+		<div id="bottom-container">
+		<a class="about-link">نرم‌افزار ارتباط موضوعی آیات قرآن کریم</a> | 
+
+		با کمک 
+		<a target="_blank" href="http://www.maarefquran.com/Files/bookfarhang/farhangbooks.php">فرهنگ قرآن</a>
+		، 
+		<a target="_blank" href="http://tanzil.net">پروژه تنزیل</a>
+		، 
+		<a target="_blank" href="http://thejit.org">کتابخانه داده‌نمایی JIT</a>
+		، و کتابخانه‌های 
+		<a target="_blank" href="http://jquery.com">jQuery</a>
+		 و 
+		<a target="_blank" href="http://jqueryui.com">jQuery UI</a> 
+		</div>
+		
+		<div id="about-container-bg"></div>
+		<div id="about-container">
+  		<h2 id="about-container-top">
+		    <button id="about-closebtn">بستن</button>
+		  ارتباط موضوعی آیات قرآن کریم
+		  </h2>
+  		<div id="about-container-content" tabindex="2">
+    		<div class="center ayat" style="margin-bottom: 0.5em">بِسمِ اللَّهِ الرَّحمٰنِ الرَّحيمِ وَبِهِۦ نَستَعينُ</div>
+    		نرم‌افزار ارتباط موضوعی آیات قرآن کریم<br>
+    		تاریخ ساخت: ۱۳۹۲/۲/۸<br>
+    		مجوز انتشار: <a target='_blank' href='http://www.gnu.org/licenses/gpl.html'>GPL</a> (<a target='_blank' href='http://www.tebyan.net/newindex.aspx?pid=218288'>مجوز GPL چیست؟</a>) همراه با دعای خیر<br>
+    		سازندگان این نرم‌افزار امید دارند محققین و کاربران نرم‌افزار آنان را از دعای خیر خویش محروم نسازند.
+    		<h4>مقدمه</h4>
+    		در ساخت این نرم‌افزار از <a target="_blank" href="http://www.maarefquran.com/Files/bookfarhang/farhangbooks.php">کتاب فرهنگ قرآن</a> (منتشر شده توسط <a target="_blank" href="http://www.maarefquran.com">مرکز فرهنگ و معارف قرآن</a>) جهت محاسبه مشابهت موضوعی آیات استفاده شده است. از مجموع ۳۳ جلد این کتاب، ۲۴ جلد به صورت الکترونیکی در وب‌سایت این مرکز در دسترس عموم قرار دارد که اطلاعات این جلدها طی فرآیندی خودکار استخراج و پردازش شده و نهایتا با امتیازدهی به موضوعات مشترک آیات مختلف، درصد تشابه موضوعی آیات محاسبه شده است.
+    		<p>
+    		ضمنا برای نمایش متن قرآن در نرم‌افزار از <a target="_blank" href="http://tanzil.net">پروژه تنزیل</a> استفاده شده، و <a target="_blank" href="http://thejit.org">کتابخانه داده‌نمایی JIT</a> جهت نمایش داده‌ها و کتابخانه‌های <a target="_blank" href="http://jquery.com">jQuery</a> و <a target="_blank" href="http://jqueryui.com">jQuery UI</a> برای پیاده‌سازی رابط کاربری به کار رفته است. 
+    		<h4>الگوریتم محاسبه تشابه</h4>
+    		الگوریتم محاسبه تشابه دو آیه از دو ایده ساده و موثر بهره می‌گیرد:
+    		<ol>
+    		  <li>
+    		  محاسبه تشابه آیات: آیاتی که موضوعات مشترک بیشتر و موضوعات غیرمشترک کمتری دارند، بیشتر مشابه هستند.
+    		  </li>
+    		  <li>
+    		  امتیازبندی موضوعات: در محاسبه تشابه، موضوعات عام و کلی نسبت به موضوعات خاص و کم‌رخداد اهمیت کمتری دارند.
+    		  </li>
+    		</ol>
+    		<p>
+    		باید توجه داشت که موضوعات در فرهنگ قرآن یک ساختار سلسه مراتبی (درختی) را تشکیل می‌دهند. در امتیازبندی موضوعات و محاسبه تشابه آیات، کل موضوعات در تمامی سطوح (از عام‌ترین تا خاص‌ترین) در نظر گرفته شده‌اند.
+    		<p>
+    		محاسبه تشابه بین آیات در دو مرحله صورت می‌پذیرد:
+    		<p>
+    		در مرحله نخست، میزان عام یا خاص بودن هر موضوع، با توجه به تعداد آیاتی که در آن موضوع وجود دارند تخمین زده شده و امتیازی به موضوع تعلق می‌گیرد. در محاسبه این تخمین از فرمول ساده «یک تقسیم بر تعداد آیات» استفاده شده است. بدین ترتیب می‌توان گفت که وزن هر موضوع ثابت بوده، و به تساوی بین آیات مرتبط با آن تقسیم می‌شود.
+    		<p>
+    		در مرحله دوم، تشابه بین دو آیه الف و ب با توجه به مجموعه موضوعات مشترک آن دو به دست می‌آید. اگر مجموعه موضوعات مرتبط آیه الف را A و مجموعه موضوعات مرتبط آیه ب را B در نظر بگیریم، امتیاز تشابه دو آیه از فرمول زیر بدست می‌آید:
+    		<blockquote dir="ltr">Score(A∩B) / Score(A∪B)</blockquote>
+    		در اینجا A∩B به معنی مجموعه موضوعات مشترک بین دو آیه، و A∪B اجتماع مجموعه موضوعات دو آیه است. تابع Score نیز معادل «مجموع امتیاز موضوعات» است که در مرحله قبلی محاسبه شده بود.
+    		<p>
+    		کمترین مقدار این فرمول صفر است که هنگامیکه رخ می‌دهد که دو آیه هیچ موضوع مشترکی نداشته باشند (A∩B تهی باشد). حداکثر مقدار نیز یک بوده و هنگامیکه رخ می‌دهد که تمامی موضوعات دو آیه مشترک باشند (A∪B با A∩B مساوی باشد). در سایر موارد نیز مقدار آن بین صفر تا یک بوده و میزان تشابه را مشخص می‌کند.
+    		<p class="center">
+    		التماس دعا
+  	  </div>
+		</div>
+
+
+		<div style="visibility: hidden; position: absolute; width: auto; height: auto;" class="jit-autoadjust-label"></div>
+	</body>
+</html>

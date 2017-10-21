@@ -1,6 +1,8 @@
 var labelType, useGradients, nativeTextSupport, animate;
 var ViewDistance = 2;
 var ViewNeighbors = 5;
+var TipNeighbors = 0;
+var TipNeighborsChangeTime = 0;
 var HideSameSura = false, HideSameRuku = false;
 var ViewCenterAyeId = '35:38';
 var CurrentSubjectTableId = null, StoreSubjectTableId;
@@ -71,6 +73,18 @@ $(function() {
       items: '.ayeref[href], .node-label',
     });
 */
+  function qtip_on_aye() {
+          var aye=$(this).attr('href').replace('#','');
+          var ayeno = FindAyeNo(aye);
+	  var a = function (n) {
+	    return quran[n]+'('+AyeNo2SuraAye(n)+') ';
+	  }
+	  var result = '<b>'+a(ayeno)+'</b>';
+	  for(var i=1; i<=TipNeighbors; i++)
+	    result = a(ayeno - i) + result + a(ayeno + i);
+	  return result
+  }
+
   $(document).on('mouseenter', '.ayeref[href], .node-label', function (event) {
     $(this).qtip({ 
       events:{ hide: function() { $(this).qtip('destroy'); } },
@@ -79,16 +93,33 @@ $(function() {
       position: {my:'top right',container:$('#container'),viewport: $('#container'), adjust:{method:'flipinvert'} },
       hide: { delay: 300, fixed:true},
       content: {
-      	text: function() { 
-          var aye=$(this).attr('href').replace('#','');
-          return quran[FindAyeNo(aye)] 
-        },
+      	text: qtip_on_aye,
 	title: function(){
           var aye=$(this).attr('href').replace('#','');
 	  return '<a href="http://tanzil.net/#'+aye+'">'+ AyeSuraNo2Name(aye) + '</a>'
 	}
 	}
       }, event)
+    })
+  $(document).on('wheel', '.ayeref[href], .node-label', function (event) {
+      var tip = $(this).data('qtip');
+      if(!tip) return true;
+
+      var time = new Date().getTime();
+      if (time > TipNeighborsChangeTime && time < TipNeighborsChangeTime + 500) return false;
+
+      TipNeighborsChangeTime = time
+
+      var d = event.originalEvent.deltaY;
+      if (d < 0) 
+      	TipNeighbors ++;
+      else
+        TipNeighbors --;
+
+      TipNeighbors = Math.min(5, Math.max(0, TipNeighbors));
+
+      $(this).qtip('option', 'content.text', qtip_on_aye);
+      return false;
     })
 
   $(document).on('mouseenter', 'tr.ayatsubject', function (event) {

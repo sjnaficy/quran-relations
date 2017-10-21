@@ -112,8 +112,12 @@ button .ui-button-text {
   direction: rtl;
 }
 
+.qtip {
+  max-width: 500px;
+}
+
 .ui-tooltip-content, .qtip-content {
-  font-family: Scheherazade, 'KFGQPC_Naskh';
+  font-family: Scheherazade, 'KFGQPC_Naskh', 'Arial', sans;
   text-align: justify;
   font-size: 2em;
   line-height: 1.2em;
@@ -125,7 +129,7 @@ button .ui-button-text {
 }
 
 .ayat {
-  font-family: Scheherazade, 'KFGQPC_Naskh';
+  font-family: Scheherazade, 'KFGQPC_Naskh', 'Arial', sans;
   font-size: 1.4em;
 }
 
@@ -138,7 +142,7 @@ Center (graph panel)
 *******************************************************/
 
 .ayat-text {
-  font-family: Scheherazade, 'KFGQPC_Naskh';
+  font-family: Scheherazade, 'KFGQPC_Naskh', 'Arial', sans;
   font-size: 1.5em;
 }
 
@@ -283,7 +287,7 @@ Left (info panel)
 }
 
 #inner-details-text {
-  font-family: Scheherazade, 'KFGQPC_Naskh';
+  font-family: Scheherazade, 'KFGQPC_Naskh', 'Arial', sans;
   text-align: justify;
   font-size: 1.8em;
   height: 200px;

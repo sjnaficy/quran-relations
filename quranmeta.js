@@ -248,6 +248,16 @@ function AyeNo2Sura(ayeno){
   }
 }
 
+function AyeNo2SuraAye(ayeno){
+  for(var i in SuraInfo) {
+    var tmp = ayeno - SuraInfo[i][0]
+    if (0 < tmp && tmp <= SuraInfo[i][1])
+    {
+      return tmp;
+    }
+  }
+}
+
 function AyeSura2Ruku(ayesura) {
   var sura = 1*ayesura.replace(/:.*/, '')
   var aye = 1*ayesura.replace(/.*:/, '')
